@@ -117,7 +117,7 @@ const RecipeDetails = () => {
       {/* Back button */}
       <button
         onClick={() => navigate(-1)}
-        className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-gray-500 transition hover:text-amber-700"
+        className="mb-6 cursor-pointer inline-flex items-center gap-2 text-sm font-medium text-gray-500 transition hover:text-amber-700"
       >
         <ArrowLeft size={18} />
         Back to recipes

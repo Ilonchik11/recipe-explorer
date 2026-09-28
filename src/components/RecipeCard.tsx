@@ -19,6 +19,12 @@ const RecipeCard = ({ recipe }: { recipe: RecipePreview }) => {
   return (
     <Link
       to={`/recipe-details/${recipe.idMeal}`}
+      onClick={() => {
+        sessionStorage.setItem(
+          "recipes-scroll-position",
+          String(window.scrollY),
+        );
+      }}
       className="group overflow-hidden rounded-2xl border border-amber-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
     >
       <div className="relative overflow-hidden">

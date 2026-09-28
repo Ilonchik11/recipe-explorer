@@ -101,6 +101,21 @@ const Search = () => {
         const recipes = await searchRecipes(filters);
 
         setRecipes(recipes);
+
+        const savedPosition = sessionStorage.getItem("recipes-scroll-position");
+
+        if (savedPosition) {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              window.scrollTo({
+                top: Number(savedPosition),
+                behavior: "smooth",
+              });
+
+              sessionStorage.removeItem("recipes-scroll-position");
+            });
+          });
+        }
       } catch {
         setError("Failed to load recipes. Please try again.");
       } finally {
